@@ -1,0 +1,16 @@
+{
+    "notification_title": "Грабеж банкомата",
+    "notification_noobeject_message": "Вы не смогли начать грабеж",
+    "notification_startatm_message": "Вы начали грабеж банкомата",
+    "notification_success_rob": "Вы успешно взломали банкомат",
+    "notification_not_completed_atm_message": "Вы не смогли взломать банкомат",
+    "notification_timeleft_partone": "Вы должны подождать ",
+    "notification_timeleft_parttwo": " минут, прежде чем снова сможете грабить банкомат",
+    "notification_stolen_gain": "Получен доход! Вы украли: ",
+    "target_rob_atm": "Грабеж банкомата",
+    "progress_insertion_card": "Вставка карты",
+    "progress_money_recovery": "Восстановление денег",
+    "police_alert": "Идет грабеж банкомата. ",
+    "police_alert_title": "Грабеж банкомата",
+    "blips_alert_police": "911 - Грабеж банкомата"
+}

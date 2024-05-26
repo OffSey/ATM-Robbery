@@ -1,0 +1,16 @@
+{
+    "notification_title": "Robbery ATM",
+    "notification_noobeject_message": "You failed to start the robbery",
+    "notification_startatm_message": "You start the ATM robbery",
+    "notification_success_rob": "You have successfully hacked the ATM",
+    "notification_not_completed_atm_message": "You failed to hack ATM",
+    "notification_timeleft_partone": "You must wait ",
+    "notification_timeleft_parttwo": " minutes before being able to rob the ATM again",
+    "notification_stolen_gain": "Gain recover! You stole:  ",
+    "target_rob_atm": "Robbing the ATM",
+    "progress_insertion_card": "Card Insertion",
+    "progress_money_recovery": "Money recovery",
+    "police_alert": "ATM robbery in progress. ",
+    "police_alert_title": "ATM Robbery",
+    "blips_alert_police": "911 - ATM Robbery"
+}

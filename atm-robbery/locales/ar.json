@@ -1,0 +1,16 @@
+{
+    "notification_title": "سرقة صراف آلي",
+    "notification_noobeject_message": "لقد فشلت في بدء عملية السرقة",
+    "notification_startatm_message": "لقد بدأت عملية سرقة الصراف الآلي",
+    "notification_success_rob": "لقد نجحت في اختراق الصراف الآلي بنجاح",
+    "notification_not_completed_atm_message": "لقد فشلت في اختراق الصراف الآلي",
+    "notification_timeleft_partone": "يجب عليك الانتظار ",
+    "notification_timeleft_parttwo": " دقائق قبل أن تتمكن من سرقة الصراف الآلي مرة أخرى",
+    "notification_stolen_gain": "اكتسبت! لقد سرقت: ",
+    "target_rob_atm": "سرقة الصراف الآلي",
+    "progress_insertion_card": "إدخال البطاقة",
+    "progress_money_recovery": "استرداد الأموال",
+    "police_alert": "سرقة صراف آلي قيد التقدم. ",
+    "police_alert_title": "سرقة صراف آلي",
+    "blips_alert_police": "911 - سرقة صراف آلي"
+}
