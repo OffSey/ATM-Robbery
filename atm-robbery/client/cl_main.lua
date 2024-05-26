@@ -45,8 +45,8 @@ if Config.Target then
                     icon = 'fa-solid fa-mobile-retro',
                     label = locale('target_rob_atm'),
                     action = function()
-                        local hasHackingComputer = exports['qs-inventory']:HasItem('phone')
-                        if hasHackingComputer then
+                        local hasItem = lib.callback.await('OffSeyATM:HasItem', Config.ItemRequire)
+                            if hasItem then
                             TriggerServerEvent("OffSeyATM:AttemptRob")
                         else
                             utils.OffSeyNotify(locale('notification_title'), locale('notification_noobeject_message'), 'error')
