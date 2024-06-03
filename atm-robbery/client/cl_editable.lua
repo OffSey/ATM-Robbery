@@ -98,5 +98,17 @@ function utils.OffSeyPoliceAlert(coords)
             }
         }
         TriggerServerEvent('rcore_dispatch:server:sendAlert', data)
+            elseif Config.Dispatch == "ps-dispatch" then
+        exports["ps-dispatch"]:CustomAlert({
+            coords = coords,
+            message = locale('police_alert'),
+            dispatchCode = "10-50",
+            description = locale('blips_alert_police'),
+            radius = 0,
+            sprite = 161,
+            color = 3,
+            scale = 1.5,
+            length = 3,
+        })
     end
 end
