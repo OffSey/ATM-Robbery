@@ -9,7 +9,7 @@ Config.AccountGainQB = "cash" -- cash/bank // For QbCore
 Config.Target = "ox_target" -- ox_target or qb-target
 
 -- Dispatch & Police
-Config.Dispatch = "default" -- cd_dispatch | qs-dispatch | rcore_dispatch | default
+Config.Dispatch = "default" -- cd_dispatch | qs-dispatch | rcore_dispatch | ps-dispatch| default
 Config.PoliceJob = {'police', 'sheriff'}
 
 -- Item
