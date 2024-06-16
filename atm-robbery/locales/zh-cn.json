@@ -12,5 +12,8 @@
     "progress_money_recovery": "取款",
     "police_alert": "正在发生 ATM 抢劫。 ",
     "police_alert_title": "ATM 抢劫",
-    "blips_alert_police": "911 - ATM 抢劫"
+    "blips_alert_police": "911 - ATM 抢劫",
+    "logs_success": "{{playerName}}（ID：{{playerId}}）成功抢劫了ATM机。\n 许可证：{{playerIdentifier}}",
+    "logs_failure": "{{playerName}}（ID：{{playerId}}）未能成功抢劫ATM机。剩余时间：{{timeLeft}} 分钟。\n 许可证：{{playerIdentifier}}",
+    "logs_gain": "{{playerName}}（ID：{{playerId}}）在抢劫后获得了{{reward}}$的奖励。\n 许可证：{{playerIdentifier}}"
 }
