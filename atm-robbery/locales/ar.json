@@ -12,5 +12,8 @@
     "progress_money_recovery": "استرداد الأموال",
     "police_alert": "سرقة صراف آلي قيد التقدم. ",
     "police_alert_title": "سرقة صراف آلي",
-    "blips_alert_police": "911 - سرقة صراف آلي"
+    "blips_alert_police": "911 - سرقة صراف آلي",
+    "logs_success": "{{playerName}} (المعرف: {{playerId}}) نجح في سرقة الصراف الآلي.\n رخصة: {{playerIdentifier}}",
+    "logs_failure": "{{playerName}} (المعرف: {{playerId}}) فشل في سرقة الصراف الآلي. الوقت المتبقي: {{timeLeft}} دقائق.\n رخصة: {{playerIdentifier}}",
+    "logs_gain": "{{playerName}} (المعرف: {{playerId}}) تلقى مكافأة قدرها {{reward}}$ بعد السرقة.\n رخصة: {{playerIdentifier}}"
 }
