@@ -12,5 +12,8 @@
     "progress_money_recovery": "Восстановление денег",
     "police_alert": "Идет грабеж банкомата. ",
     "police_alert_title": "Грабеж банкомата",
-    "blips_alert_police": "911 - Грабеж банкомата"
+    "blips_alert_police": "911 - Грабеж банкомата",
+    "logs_success": "{{playerName}} (ID: {{playerId}}) успешно ограбил банкомат.\n Лицензия: {{playerIdentifier}}",
+    "logs_failure": "{{playerName}} (ID: {{playerId}}) не смог ограбить банкомат. Осталось времени: {{timeLeft}} минут.\n Лицензия: {{playerIdentifier}}",
+    "logs_gain": "{{playerName}} (ID: {{playerId}}) получил вознаграждение в размере {{reward}}$ после ограбления.\n Лицензия: {{playerIdentifier}}"
 }
