@@ -98,17 +98,50 @@ function utils.OffSeyPoliceAlert(coords)
             }
         }
         TriggerServerEvent('rcore_dispatch:server:sendAlert', data)
-            elseif Config.Dispatch == "ps-dispatch" then
-        exports["ps-dispatch"]:CustomAlert({
-            coords = coords,
-            message = locale('police_alert'),
-            dispatchCode = "10-50",
-            description = locale('blips_alert_police'),
-            radius = 0,
-            sprite = 161,
-            color = 3,
-            scale = 1.5,
-            length = 3,
+    elseif Config.Dispatch == "ps-dispatch" then
+        TriggerServerEvent("dispatch:server:notify",{
+            dispatchcodename = "speeding", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
+            dispatchCode = "10-11",
+            firstStreet = locationInfo,
+            model = vehdata.name, -- vehicle name
+            plate = vehdata.plate, -- vehicle plate
+            priority = 2, 
+            firstColor = vehdata.colour, -- vehicle color
+            heading = heading, 
+            automaticGunfire = false,
+            origin = {
+                x = currentPos.x,
+                y = currentPos.y,
+                z = currentPos.z
+            },
+            dispatchMessage = "Speeding Vehicle",
+            job = Config.PoliceJob
         })
     end
 end
+
+
+
+local function ATMRobbery(vehicle)
+    local currentPos = GetEntityCoords(PlayerPedId())
+    local locationInfo = getStreetandZone(currentPos)
+    local heading = getCardinalDirectionFromHeading()
+    TriggerServerEvent("dispatch:server:notify",{
+        dispatchcodename = "speeding", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
+        dispatchCode = "10-11",
+        firstStreet = locationInfo,
+        model = vehdata.name, -- vehicle name
+        plate = vehdata.plate, -- vehicle plate
+        priority = 2, 
+        firstColor = vehdata.colour, -- vehicle color
+        heading = heading, 
+        automaticGunfire = false,
+        origin = {
+            x = currentPos.x,
+            y = currentPos.y,
+            z = currentPos.z
+        },
+        dispatchMessage = "Speeding Vehicle",
+        job = {"police"}
+    })
+end exports('ATMRobbery', ATMRobbery)
