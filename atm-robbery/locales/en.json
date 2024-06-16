@@ -12,5 +12,9 @@
     "progress_money_recovery": "Money recovery",
     "police_alert": "ATM robbery in progress. ",
     "police_alert_title": "ATM Robbery",
-    "blips_alert_police": "911 - ATM Robbery"
+    "blips_alert_police": "911 - ATM Robbery",
+    "logs_success": "{{playerName}} (ID: {{playerId}}) successfully robbed the ATM.\n License: {{playerIdentifier}}",
+    "logs_failure": "{{playerName}} (ID: {{playerId}}) failed to rob the ATM. Time left: {{timeLeft}} minutes.\n License: {{playerIdentifier}}",
+    "logs_gain": "{{playerName}} (ID: {{playerId}}) received a reward of {{reward}}$ after the robbery.\n License: {{playerIdentifier}}"
+
 }
