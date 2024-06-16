@@ -12,5 +12,8 @@
     "progress_money_recovery": "पैसे की वापसी",
     "police_alert": "एटीएम डकैती की प्रगति में है। ",
     "police_alert_title": "एटीएम डकैती",
-    "blips_alert_police": "911 - एटीएम डकैती"
+    "blips_alert_police": "911 - एटीएम डकैती",
+    "logs_success": "{{playerName}} (ID: {{playerId}}) एटीएम को सफलतापूर्वक डक्कन दिया।\n लाइसेंस: {{playerIdentifier}}",
+    "logs_failure": "{{playerName}} (ID: {{playerId}}) एटीएम को लूटने में विफल रहा। शेष समय: {{timeLeft}} मिनट।\n लाइसेंस: {{playerIdentifier}}",
+    "logs_gain": "{{playerName}} (ID: {{playerId}}) लूटपाट के बाद {{reward}}$ का इनाम प्राप्त किया।\n लाइसेंस: {{playerIdentifier}}"
 }
