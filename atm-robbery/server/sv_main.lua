@@ -45,22 +45,26 @@ AddEventHandler("OffSeyATM:AttemptRob", function()
 end)
 
 RegisterServerEvent("OffSeyATM:Recompense")
-AddEventHandler("OffSeyATM:Recompense", function()
+AddEventHandler("OffSeyATM:Recompense", function(playerCoords)
     local xPlayer = ESX.GetPlayerFromId(source)
     local playerName = xPlayer.getName()
     local playerId = source
     local playerIdentifier = xPlayer.identifier
 
-    if Config.Framework then
-        if Config.Framework == "ESX" then
-            framework.addMoneyATM({ player = source, amount = reward })
-            TriggerClientEvent('OffSey:showNotification', source, locale('notification_title'), locale('notification_stolen_gain') .. reward, 'info')
-        elseif Config.Framework == "Qb" then
-            framework.addMoneyATM({ player = source, amount = reward })
-            TriggerClientEvent('OffSey:showNotification', source, locale('notification_title'), locale('notification_stolen_gain') .. reward, 'info')
+    if playerCoords then
+        local reward = math.random(1000, 5000)
+        framework.addMoneyATM({ player = source, amount = reward })
+        TriggerClientEvent('OffSey:showNotification', source, locale('notification_title'), locale('notification_stolen_gain') .. reward, 'info')
+        print(playerName .. " succeeded in an ATM robbery and won " .. reward)
+    else
+        print("Cheat Detect: ".. playerName.." (".. playerIdentifier..") attempted to use the trigger with invalid coordinates.")
+        
+        if Config.Fiveguard then
+            exports[Config.FiveguardName]:fg_BanPlayer(playerId, "Cheating attempt detected (ATM robbery).", true)
+        else
+            DropPlayer(playerId, "Cheating attempt detected.")
         end
     end
-
     webhooks(formatMessage(locale('logs_gain'), {playerName = playerName, playerId = playerId, playerIdentifier = playerIdentifier, reward = reward}), 3066993)
 end)
 
