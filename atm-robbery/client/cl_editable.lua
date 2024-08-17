@@ -142,7 +142,7 @@ local atmProps = {
     "amb_prop_pine_atm"
 }
 
-local function isNearATM()
+local function isNearATMClient()
     local playerPed = PlayerPedId()
     local playerCoords = GetEntityCoords(playerPed)
     local isNear = false
@@ -159,7 +159,7 @@ local function isNearATM()
 end
 
 function utils.OnSuccess()
-    if isNearATM() then
+    if isNearATMClient() then
         utils.OffSeyNotify(locale('notification_title'), locale('notification_success_rob'), 'info')
         local progressbar = lib.progressCircle({
             duration = 5000,
@@ -175,12 +175,21 @@ function utils.OnSuccess()
                 clip = 'enter'
             }
         })
-        TriggerServerEvent("OffSeyATM:Recompense")
-        print("success")
+
+        if progressbar then
+            local playerPed = PlayerPedId()
+            local playerCoords = GetEntityCoords(playerPed)
+            -- Envoyer les coordonnées au serveur
+            TriggerServerEvent("OffSeyATM:Recompense", playerCoords)
+            print("Braquage réussi")
+        else
+            print("Braquage annulé")
+        end
     else
-        print("Cheateurrr !")
+        print("Cheateur détecté côté client !")
     end
 end
+
 
 function utils.OnFailure(reason)
     Wait(4000)
