@@ -13,19 +13,27 @@ Config.Framework = "ESX" -- ESX or Qb
 Config.AccountGainESX = "black_money" -- black_money/money/bank // For ESX
 Config.AccountGainQB = "cash" -- cash/bank // For QbCore
 
+Config.Fiveguard = true -- Use fiveguard ? For Ban 
+Config.FiveguardName = "fiveguard" -- The name of your fiveguard file
+
+-- MiniGame
+Config.MiniGame = "thermite" -- Options: "digital", "thermite", "number_maze"
+
 -- Target
 Config.Target = "ox_target" -- ox_target or qb-target
 
 -- Dispatch & Police
-Config.Dispatch = "qs-dispatch" -- cd_dispatch | qs-dispatch | rcore_dispatch | ps-dispatch | default
+Config.Dispatch = "default" -- cd_dispatch | qs-dispatch | rcore_dispatch | ps-dispatch | default
 Config.PoliceJob = {'police', 'sheriff'}
 
 -- Item
 Config.ItemRequire = "hacking_computer"
-Config.RemoveItem = "false" -- true or false
+Config.RemoveItem = true -- true or false
 
 -- Gain Stolen
 Config.GainStolen = math.random(10000, 15000)
+
+Config.WebhooksLinks = "WebhooksLinks"
 ```
 
 ## Items to Create
