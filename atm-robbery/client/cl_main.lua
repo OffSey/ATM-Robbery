@@ -92,7 +92,7 @@ AddEventHandler('OffSey:AtmRob', function()
                     utils.StopAnimation()
                 if outcome == true then
                     Wait(3500)
-                    utils.OnSuccessDigital()
+                    utils.OnSuccess()
                 else
                     utils.OnFailure(reason)
                 end
