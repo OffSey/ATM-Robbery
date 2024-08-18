@@ -15,7 +15,6 @@ end
 
 local lastRobbedTime = 0
 local cooldownTime = 900
-local reward = Config.GainStolen
 
 RegisterServerEvent("OffSeyATM:AttemptRob")
 AddEventHandler("OffSeyATM:AttemptRob", function()
@@ -50,9 +49,9 @@ AddEventHandler("OffSeyATM:Recompense", function(playerCoords)
     local playerName = xPlayer.getName()
     local playerId = source
     local playerIdentifier = xPlayer.identifier
-
+    local reward = Config.GainStolen
+        
     if playerCoords then
-        local reward = math.random(1000, 5000)
         framework.addMoneyATM({ player = source, amount = reward })
         TriggerClientEvent('OffSey:showNotification', source, locale('notification_title'), locale('notification_stolen_gain') .. reward, 'info')
         print(playerName .. " succeeded in an ATM robbery and won " .. reward)
