@@ -13,6 +13,9 @@ Config.Framework = "ESX" -- ESX or Qb
 Config.AccountGainESX = "black_money" -- black_money/money/bank // For ESX
 Config.AccountGainQB = "cash" -- cash/bank // For QbCore
 
+Config.Fiveguard = true -- Use fiveguard ? For Ban 
+Config.FiveguardName = "fiveguard" -- The name of your fiveguard file
+
 -- MiniGame
 Config.MiniGame = "thermite" -- Options: "digital", "thermite", "number_maze"
 
