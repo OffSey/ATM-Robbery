@@ -8,7 +8,7 @@ framework = {}
 
 function framework.addMoneyATM(data)
     local xPlayer = ESX.GetPlayerFromId(data.player)
-    xPlayer.addAccountMoney(Config.AccountGainESX, data.amount)
+    xPlayer.addAccountMoney(Config.AccountGain, data.amount)
 end
 
 
