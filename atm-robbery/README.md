@@ -10,10 +10,9 @@
 Config = {}
 -- Framework
 Config.Framework = "ESX" -- ESX or Qb
-Config.AccountGainESX = "black_money" -- black_money/money/bank // For ESX
-Config.AccountGainQB = "cash" -- cash/bank // For QbCore
+Config.AccountGain = "black_money" -- black_money/money/bank // For ESX || Cash for QbCore
 
-Config.Fiveguard = true -- Use fiveguard ? For Ban 
+Config.Fiveguard = false -- Use fiveguard ? For Ban 
 Config.FiveguardName = "fiveguard" -- The name of your fiveguard file
 
 -- MiniGame
@@ -65,6 +64,11 @@ Config.WebhooksLinks = "WebhooksLinks"
     close = false,
     description = 'A computer equipped with software for hacking.',
 }
+```
+
+### Qb :
+```
+    ['hacking_computer']                        = {['name'] = 'hacking_computer',                          ['label'] = 'Hacking Computer',           ['weight'] = 100,          ['type'] = 'item',         ['image'] = 'hacking_computer.png',                ['unique'] = true,          ['useable'] = true,      ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Super hacking computer'},
 ```
 
 ## Dependencies
