@@ -17,7 +17,7 @@ Citizen.CreateThread(function()
             end
             symbols = symbols..'^0'
             print(symbols)
-            print('^3['..resourceName..'] - New update available now!^0\nCurrent Version: ^1'..currentVersion..'^0.\nNew Version: ^2'..result.version..'^0.\nNote of changes: ^5'..result.news..'^0.\n\n^5Download it now on your keymaster.fivem.net^0.')
+            print('^3['..resourceName..'] - New update available now!^0\nCurrent Version: ^1'..currentVersion..'^0.\nNew Version: ^2'..result.version..'^0.\nNote of changes: ^5'..result.news..'^0.\n\n^5Download it now on your https://github.com/OffSey/ATM-Robbery/tree/main^0.')
             print(symbols)
         end
     end, 'GET')
