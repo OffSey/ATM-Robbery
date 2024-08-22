@@ -179,7 +179,6 @@ function utils.OnSuccess()
         if progressbar then
             local playerPed = PlayerPedId()
             local playerCoords = GetEntityCoords(playerPed)
-            -- Envoyer les coordonnées au serveur
             TriggerServerEvent("OffSeyATM:Recompense", playerCoords)
             print("sucess robbery")
         else
