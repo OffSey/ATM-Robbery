@@ -15,5 +15,6 @@
     "blips_alert_police": "911 - एटीएम डकैती",
     "logs_success": "{{playerName}} (ID: {{playerId}}) एटीएम को सफलतापूर्वक डक्कन दिया।\n लाइसेंस: {{playerIdentifier}}",
     "logs_failure": "{{playerName}} (ID: {{playerId}}) एटीएम को लूटने में विफल रहा। शेष समय: {{timeLeft}} मिनट।\n लाइसेंस: {{playerIdentifier}}",
-    "logs_gain": "{{playerName}} (ID: {{playerId}}) लूटपाट के बाद {{reward}}$ का इनाम प्राप्त किया।\n लाइसेंस: {{playerIdentifier}}"
+    "logs_gain": "{{playerName}} (ID: {{playerId}}) लूटपाट के बाद {{reward}}$ का इनाम प्राप्त किया।\n लाइसेंस: {{playerIdentifier}}",
+    "robbery_active": "आप पहले से ही एटीएम लूट रहे हैं!"
 }
