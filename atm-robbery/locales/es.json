@@ -15,5 +15,6 @@
     "blips_alert_police": "911 - Robo de cajero automático",
     "logs_success": "{{playerName}} (ID: {{playerId}}) ha robado con éxito el cajero automático.\n Licencia: {{playerIdentifier}}",
     "logs_failure": "{{playerName}} (ID: {{playerId}}) ha fallado al intentar robar el cajero automático. Tiempo restante: {{timeLeft}} minutos.\n Licencia: {{playerIdentifier}}",
-    "logs_gain": "{{playerName}} (ID: {{playerId}}) recibió una recompensa de {{reward}}$ después del robo.\n Licencia: {{playerIdentifier}}"
+    "logs_gain": "{{playerName}} (ID: {{playerId}}) recibió una recompensa de {{reward}}$ después del robo.\n Licencia: {{playerIdentifier}}",
+    "robbery_active": "¡Ya estás robando el cajero automático!"
 }
