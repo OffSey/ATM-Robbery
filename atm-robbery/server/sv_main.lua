@@ -2,6 +2,7 @@ lib.locale()
 
 local ESX = nil
 local QBCore = nil
+local activeRobberies = {}
 
 if Config.Framework == "ESX" then
     ESX = exports['es_extended']:getSharedObject()
@@ -27,6 +28,20 @@ local function getPlayerFromId(source)
     return nil
 end
 
+local function startRobbery(playerId)
+    activeRobberies[playerId] = true
+    print('start robbery atm playerid:' ..playerId)
+end
+
+local function endRobbery(playerId)
+    activeRobberies[playerId] = nil
+    print('end robbery atm playerid:' ..playerId)
+end
+
+local function isRobberyActive(playerId)
+    return activeRobberies[playerId] ~= nil
+end
+
 RegisterServerEvent("OffSeyATM:AttemptRob")
 AddEventHandler("OffSeyATM:AttemptRob", function()
     local currentTime = os.time()
@@ -38,11 +53,17 @@ AddEventHandler("OffSeyATM:AttemptRob", function()
         return
     end
 
+    if isRobberyActive(playerId) then
+        TriggerClientEvent('OffSey:showNotification', playerId, locale('notification_title'), locale('robbery_active'), 'error')
+        return
+    end
+
     local playerName = xPlayer.getName and xPlayer.getName() or xPlayer.PlayerData.name
     local playerIdentifier = xPlayer.identifier or xPlayer.PlayerData.citizenid
 
     if currentTime - lastRobbedTime >= cooldownTime then
         lastRobbedTime = currentTime
+        startRobbery(playerId)
         TriggerClientEvent("OffSey:AtmRob", playerId)
 
         if Config.RemoveItem then
@@ -70,25 +91,44 @@ AddEventHandler("OffSeyATM:Recompense", function(playerCoords)
         return
     end
 
+    if not isRobberyActive(playerId) then
+        local playerName = xPlayer.getName and xPlayer.getName() or xPlayer.PlayerData.name
+        local playerIdentifier = xPlayer.identifier or xPlayer.PlayerData.citizenid
+
+        print("Cheat Detect: "..playerName.."("..playerIdentifier..") attempted to receive money without active heist.")
+        
+        if Config.Fiveguard then
+            exports[Config.FiveguardName]:fg_BanPlayer(playerId, "Cheating attempt detected (reward without active heist).", true)
+        else
+            DropPlayer(playerId, "Cheating attempt detected.")
+        end
+        return
+    end
+
     local playerName = xPlayer.getName and xPlayer.getName() or xPlayer.PlayerData.name
     local playerIdentifier = xPlayer.identifier or xPlayer.PlayerData.citizenid
     local reward = Config.GainStolen
 
     if playerCoords then
         framework.addMoneyATM({ player = playerId, amount = reward })
+
         TriggerClientEvent('OffSey:showNotification', playerId, locale('notification_title'), locale('notification_stolen_gain') .. reward, 'info')
-        print(playerName .. " succeeded in an ATM robbery and won " .. reward)
+        print(playerName .. " pulled off a heist and won " .. reward)
+
+        endRobbery(playerId)
     else
         print("Cheat Detect: ".. playerName.." (".. playerIdentifier..") attempted to use the trigger with invalid coordinates.")
 
         if Config.Fiveguard then
-            exports[Config.FiveguardName]:fg_BanPlayer(playerId, "Cheating attempt detected (ATM robbery).", true)
+            exports[Config.FiveguardName]:fg_BanPlayer(playerId, "Cheating attempt detected (invalid coordinates during the heist).", true)
         else
             DropPlayer(playerId, "Cheating attempt detected.")
         end
     end
+
     webhooks(formatMessage(locale('logs_gain'), {playerName = playerName, playerId = playerId, playerIdentifier = playerIdentifier, reward = reward}), 3066993)
 end)
+
 
 RegisterServerEvent('OffSey:Server:PoliceAlert')
 AddEventHandler('OffSey:Server:PoliceAlert', function(coords)
