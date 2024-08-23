@@ -15,5 +15,6 @@
     "blips_alert_police": "911 - Braquage d'ATM",
     "logs_success": "{{playerName}} (ID: {{playerId}}) a réussi à braquer l'ATM.\n License : {{playerIdentifier}}",
     "logs_failure": "{{playerName}} (ID: {{playerId}}) a échoué à braquer l'ATM. Temps restant : {{timeLeft}} minutes.\n License : {{playerIdentifier}}",
-    "logs_gain": "{{playerName}} (ID: {{playerId}})a reçu une récompense de {{reward}}$ après le braquage.\n License : {{playerIdentifier}}"
+    "logs_gain": "{{playerName}} (ID: {{playerId}})a reçu une récompense de {{reward}}$ après le braquage.\n License : {{playerIdentifier}}",
+    "robbery_active": "Vous êtes déjà en train de braquer l'ATM !"
 }
