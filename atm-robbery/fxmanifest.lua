@@ -1,6 +1,6 @@
 fx_version 'bodacious'
 games {'gta5'}
-version '1.0.5'
+version '1.0.6'
 lua54 'yes'
 author 'OffSey'
 description 'Robbery ATM'
