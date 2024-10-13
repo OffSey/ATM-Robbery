@@ -99,7 +99,8 @@ function utils.OffSeyPoliceAlert(coords)
         }
         TriggerServerEvent('rcore_dispatch:server:sendAlert', data)
     elseif Config.Dispatch == "ps-dispatch" then
-        exports['ps-dispatch']:SuspiciousActivity()
+        exports['ps-dispatch']:ATMRobbery()
+        print("Join the discord for Snippets Code in ps-dispatch! : https://discord.gg/b8jpP82MqJ")
     end
 end
 
