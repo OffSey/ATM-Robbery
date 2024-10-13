@@ -99,24 +99,7 @@ function utils.OffSeyPoliceAlert(coords)
         }
         TriggerServerEvent('rcore_dispatch:server:sendAlert', data)
     elseif Config.Dispatch == "ps-dispatch" then
-        TriggerServerEvent("dispatch:server:notify",{
-            dispatchcodename = "speeding", -- has to match the codes in sv_dispatchcodes.lua so that it generates the right blip
-            dispatchCode = "10-11",
-            firstStreet = locationInfo,
-            model = vehdata.name, -- vehicle name
-            plate = vehdata.plate, -- vehicle plate
-            priority = 2, 
-            firstColor = vehdata.colour, -- vehicle color
-            heading = heading, 
-            automaticGunfire = false,
-            origin = {
-                x = currentPos.x,
-                y = currentPos.y,
-                z = currentPos.z
-            },
-            dispatchMessage = "Speeding Vehicle",
-            job = Config.PoliceJob
-        })
+        exports['ps-dispatch']:SuspiciousActivity()
     end
 end
 
