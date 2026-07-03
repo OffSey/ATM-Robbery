@@ -32,7 +32,8 @@ Config.RemoveItem = true -- true or false
 -- Gain Stolen
 Config.GainStolen = math.random(10000, 15000)
 
-Config.WebhooksLinks = "WebhooksLinks"
+-- Logs
+-- Go to: server/bridge/logs.lua and put webhook link in local "webhookLink" (line 1)
 ```
 
 ## Items to Create
