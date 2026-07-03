@@ -1,3 +1,5 @@
+local webhooklink = ''
+
 local function getOSTime()
     local date = os.date('*t')
     if date.month < 10 then date.month = "0" ..date.month end
@@ -23,7 +25,7 @@ end
             ["url"] = ""
         }
     }
-    PerformHttpRequest(Config.WebhooksLinks, function() end, 'POST', json.encode({
+    PerformHttpRequest(webhooklink, function() end, 'POST', json.encode({
         username = "ATM-Robbry",
         embeds = { discordEmbed }
     }), {['Content-Type'] = 'application/json'})
