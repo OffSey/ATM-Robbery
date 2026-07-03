@@ -1,7 +1,7 @@
 # OffSey ATM Robbery
 
-- Preview Video : https://youtu.be/lNlXhBCLWKE
-- CFX Forum : Soon
+- [Preview video](LIEN_VERS_LA_VIDEO)
+- [Forum about this script](LIEN_VERS_LE_FORUM)
 - Resmon 0.00 ms
 
 ## Configuration
@@ -32,17 +32,16 @@ Config.RemoveItem = true -- true or false
 -- Gain Stolen
 Config.GainStolen = math.random(10000, 15000)
 
-Config.WebhooksLinks = "WebhooksLinks"
+-- Logs
+-- Go to: server/bridge/logs.lua and put webhook link in local "webhookLink" (line 1)
 ```
 
 ## Items to Create
 
-### Hacking Computer
+**Hacking Computer**
 
-Item for:
-
-Quasar:
-
+## Item for:
+### Quasar:
 ```lua
 ['hacking_computer'] = {
     ['name'] = 'hacking_computer',
@@ -57,9 +56,7 @@ Quasar:
     ['description'] = 'A computer equipped with software for hacking.',
 }
 ```
-
-Ox:
-
+### Ox:
 ```lua
 ['hacking_computer'] = {
     label = 'Hacking Computer',
@@ -70,8 +67,18 @@ Ox:
 }
 ```
 
+### Qb :
+```
+    ['hacking_computer']                        = {['name'] = 'hacking_computer',                          ['label'] = 'Hacking Computer',           ['weight'] = 100,          ['type'] = 'item',         ['image'] = 'hacking_computer.png',                ['unique'] = true,          ['useable'] = true,      ['shouldClose'] = true,      ['combinable'] = nil,   ['description'] = 'Super hacking computer'},
+```
+
 ## Dependencies
 
-- [ox_lib](https://github.com/overextended/ox_lib)
-- [qtarget](https://github.com/overextended/qtarget)
-- [Utk_fingerprint](https://github.com/utkuali/Finger-Print-Hacking-Game)
+- ox_lib : https://github.com/overextended/ox_lib
+- qtarget : https://github.com/overextended/qtarget
+
+-- Mini-Game :
+
+- Utk_fingerprint : https://github.com/utkuali/Finger-Print-Hacking-Game
+-- Or
+- PS_UI : https://github.com/Project-Sloth/ps-ui
